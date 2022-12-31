@@ -9,7 +9,6 @@ import { map, switchMap } from 'rxjs/operators'
 import { numberWithCommas, pluralize } from '@sourcegraph/common'
 import { dataOrThrowErrors, gql, useQuery } from '@sourcegraph/http-client'
 import { UserAvatar } from '@sourcegraph/shared/src/components/UserAvatar'
-import { ExtensionsControllerProps } from '@sourcegraph/shared/src/extensions/controller'
 import { SearchPatternType, TreeFields } from '@sourcegraph/shared/src/graphql-operations'
 import { PlatformContextProps } from '@sourcegraph/shared/src/platform/context'
 import { TelemetryProps } from '@sourcegraph/shared/src/telemetry/telemetryService'
@@ -168,7 +167,7 @@ export const fetchDiffStats = (args: {
         })
     )
 
-interface TreePageContentProps extends ExtensionsControllerProps, TelemetryProps, PlatformContextProps {
+interface TreePageContentProps extends TelemetryProps, PlatformContextProps {
     filePath: string
     tree: TreeFields
     repo: TreePageRepositoryFields
