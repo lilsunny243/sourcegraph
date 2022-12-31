@@ -279,7 +279,6 @@ var allowedPrometheusFieldNames = map[[2]string]struct{}{
 	{"Query", "user"}:                           {},
 	{"Query", "viewerConfiguration"}:            {},
 	{"Query", "viewerSettings"}:                 {},
-	{"RegistryExtensionConnection", "nodes"}:    {},
 	{"Repository", "cloneInProgress"}:           {},
 	{"Repository", "commit"}:                    {},
 	{"Repository", "comparison"}:                {},
