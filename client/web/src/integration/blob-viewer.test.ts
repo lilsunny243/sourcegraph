@@ -13,7 +13,11 @@ import {
     createTreeEntriesResult,
     createBlobContentResult,
 } from './graphQlResponseHelpers'
+<<<<<<< HEAD
 import { commonWebGraphQlResults, createViewerSettingsGraphQLOverride } from './graphQlResults'
+=======
+import { commonWebGraphQlResults } from './graphQlResults'
+>>>>>>> 4244debd9d (wip)
 
 describe('Blob viewer', () => {
     let driver: Driver

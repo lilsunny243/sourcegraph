@@ -122,8 +122,6 @@ const webviewSourcePath = path.resolve(vscodeSourcePath, 'webview')
 const searchPanelWebviewPath = path.resolve(webviewSourcePath, 'search-panel')
 const searchSidebarWebviewPath = path.resolve(webviewSourcePath, 'sidebars', 'search')
 const helpSidebarWebviewPath = path.resolve(webviewSourcePath, 'sidebars', 'help')
-// Extension Host Worker Path
-const extensionHostWorker = /main\.worker\.ts$/
 // Monaco Editor Path
 const MONACO_EDITOR_PATH = path.resolve(rootPath, 'node_modules', 'monaco-editor')
 /** @type {import('webpack').Configuration}*/
@@ -186,18 +184,8 @@ const webviewConfig = {
     rules: [
       {
         test: /\.tsx?$/,
-        exclude: [/node_modules/, extensionHostWorker],
+        exclude: [/node_modules/],
         use: [getBabelLoader()],
-      },
-      {
-        test: extensionHostWorker,
-        use: [
-          {
-            loader: 'worker-loader',
-            options: { inline: 'no-fallback' },
-          },
-          getBabelLoader(),
-        ],
       },
       {
         test: /\.(sass|scss)$/,

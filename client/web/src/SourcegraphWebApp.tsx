@@ -11,7 +11,6 @@ import { isTruthy, logger } from '@sourcegraph/common'
 import { GraphQLClient, HTTPStatusError } from '@sourcegraph/http-client'
 import { SharedSpanName, TraceSpanProvider } from '@sourcegraph/observability-client'
 import { setCodeIntelSearchContext } from '@sourcegraph/shared/src/codeintel/searchContext'
-import { ExtensionsControllerProps } from '@sourcegraph/shared/src/extensions/controller'
 import { PlatformContext } from '@sourcegraph/shared/src/platform/context'
 import { ShortcutProvider } from '@sourcegraph/shared/src/react-shortcuts'
 import {
@@ -54,7 +53,6 @@ import styles from './LegacySourcegraphWebApp.module.scss'
 export interface StaticSourcegraphWebAppContext {
     setSelectedSearchContextSpec: (spec: string) => void
     platformContext: PlatformContext
-    extensionsController: ExtensionsControllerProps['extensionsController'] | null
 }
 
 export interface DynamicSourcegraphWebAppContext {
@@ -264,7 +262,6 @@ export const SourcegraphWebApp: FC<StaticAppConfig> = props => {
     const staticContext = {
         setSelectedSearchContextSpec,
         platformContext,
-        extensionsController: null,
     } satisfies StaticSourcegraphWebAppContext
 
     const dynamicContext = {

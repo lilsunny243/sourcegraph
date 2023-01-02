@@ -16,7 +16,6 @@ import {
     toPositionOrRangeQueryParameter,
 } from '@sourcegraph/common'
 import { editorHeight, useCodeMirror } from '@sourcegraph/shared/src/components/CodeMirrorEditor'
-import { ExtensionsControllerProps } from '@sourcegraph/shared/src/extensions/controller'
 import { PlatformContextProps } from '@sourcegraph/shared/src/platform/context'
 import { Shortcut } from '@sourcegraph/shared/src/react-shortcuts'
 import { SettingsCascadeProps } from '@sourcegraph/shared/src/settings/settings'
@@ -40,7 +39,6 @@ import { lockFirstVisibleLine } from './codemirror/lock-line'
 import { navigateToLineOnAnyClickExtension } from './codemirror/navigate-to-any-line-on-click'
 import { occurrenceAtPosition, positionAtCmPosition } from './codemirror/occurrence-utils'
 import { search } from './codemirror/search'
-import { sourcegraphExtensions } from './codemirror/sourcegraph-extensions'
 import { selectOccurrence } from './codemirror/token-selection/code-intel-tooltips'
 import { tokenSelectionExtension } from './codemirror/token-selection/extension'
 import { languageSupport } from './codemirror/token-selection/languageSupport'
@@ -60,7 +58,6 @@ export interface BlobProps
         PlatformContextProps,
         TelemetryProps,
         HoverThresholdProps,
-        ExtensionsControllerProps,
         CodeMirrorBlobProps {
     className: string
     wrapCode: boolean
@@ -179,7 +176,6 @@ export const CodeMirrorBlob: React.FunctionComponent<BlobProps> = props => {
         wrapCode,
         ariaLabel,
         role,
-        extensionsController,
         isBlameVisible,
         blameHunks,
         enableLinkDrivenCodeNavigation,
@@ -299,13 +295,6 @@ export const CodeMirrorBlob: React.FunctionComponent<BlobProps> = props => {
             syntaxHighlight.of(blobInfo),
             languageSupport.of(blobInfo),
             pin.init(() => (hasPin ? position : null)),
-            extensionsController !== null && !navigateToLineOnAnyClick
-                ? sourcegraphExtensions({
-                      blobInfo,
-                      initialSelection: position,
-                      extensionsController,
-                  })
-                : [],
             blobPropsCompartment.of(blobProps),
             blameDecorationsCompartment.of(blameDecorations),
             navigateToLineOnAnyClick ? navigateToLineOnAnyClickExtension : [],
@@ -324,7 +313,7 @@ export const CodeMirrorBlob: React.FunctionComponent<BlobProps> = props => {
         // further below. However, they are still needed here because we need to
         // set initial values when we re-initialize the editor.
         // eslint-disable-next-line react-hooks/exhaustive-deps
-        [onSelection, blobInfo, extensionsController]
+        [onSelection, blobInfo]
     )
 
     const editorRef = useRef<EditorView>()
