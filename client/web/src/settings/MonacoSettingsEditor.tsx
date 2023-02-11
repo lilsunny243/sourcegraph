@@ -10,7 +10,6 @@ import { MonacoEditor } from '@sourcegraph/shared/src/components/MonacoEditor'
 import { TelemetryService } from '@sourcegraph/shared/src/telemetry/telemetryService'
 
 import jsonSchemaMetaSchema from '../../../../schema/json-schema-draft-07.schema.json'
-import settingsSchema from '../../../../schema/settings.schema.json'
 
 import styles from './MonacoSettingsEditor.module.scss'
 
@@ -264,15 +263,6 @@ export class MonacoSettingsEditor extends React.PureComponent<Props, State> {
 }
 
 function setDiagnosticsOptions(editor: typeof monaco, jsonSchema: JSONSchema | undefined): void {
-    const schema = { ...settingsSchema, properties: { ...settingsSchema.properties } }
-    if (!window.context.enableLegacyExtensions) {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment -- we need to remove this key conditionally, but not from the schema
-        // @ts-ignore
-        delete schema.properties.extensions
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment -- we need to remove this key conditionally, but not from the schema
-        // @ts-ignore
-        delete schema.properties['extensions.activeLoggers']
-    }
     editor.languages.json.jsonDefaults.setDiagnosticsOptions({
         validate: true,
         allowComments: true,
@@ -287,14 +277,6 @@ function setDiagnosticsOptions(editor: typeof monaco, jsonSchema: JSONSchema | u
             {
                 uri: 'http://json-schema.org/draft-07/schema',
                 schema: jsonSchemaMetaSchema as JSONSchema,
-            },
-            {
-                uri: 'settings.schema.json#',
-                schema,
-            },
-            {
-                uri: 'settings.schema.json',
-                schema,
             },
         ],
     })
