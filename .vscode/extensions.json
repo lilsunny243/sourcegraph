@@ -3,8 +3,7 @@
   // for the documentation about the extensions.json format
   "recommendations": [
     "sourcegraph.sourcegraph",
-    "EditorConfig.editorconfig",
-    "esbenp.prettier-vscode",
+    "editorconfig.editorconfig",
     "graphql.vscode-graphql",
     "golang.go",
     "exiasr.hadolint",
@@ -14,7 +13,9 @@
     "dbaeumer.vscode-eslint",
     "foxundermoon.shell-format",
     "timonwong.shellcheck",
-    "felixfbecker.css-stacking-contexts"
+    "felixfbecker.css-stacking-contexts",
+    "hediet.vscode-drawio",
+    "codespaces-contrib.codeswing"
   ],
   "unwantedRecommendations": ["ms-vscode.vscode-typescript-tslint-plugin", "eg2.tslint"]
 }
