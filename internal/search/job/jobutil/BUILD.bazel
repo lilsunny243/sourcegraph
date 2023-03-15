@@ -5,6 +5,7 @@ go_library(
     srcs = [
         "alert.go",
         "combinators.go",
+        "enterprise.go",
         "expression_job.go",
         "filter_file_contains.go",
         "job.go",
@@ -30,7 +31,6 @@ go_library(
         "//internal/featureflag",
         "//internal/search",
         "//internal/search/alert",
-        "//internal/search/codeownership",
         "//internal/search/commit",
         "//internal/search/filter",
         "//internal/search/job",
@@ -61,6 +61,7 @@ go_library(
 )
 
 go_test(
+    timeout = "short",
     name = "jobutil_test",
     srcs = [
         "alert_test.go",
@@ -68,6 +69,7 @@ go_test(
         "expression_job_test.go",
         "filter_file_contains_test.go",
         "job_test.go",
+        "log_job_test.go",
         "repo_pager_job_test.go",
         "repos_test.go",
         "sanitize_job_test.go",
@@ -81,6 +83,7 @@ go_test(
         "//internal/actor",
         "//internal/api",
         "//internal/authz",
+        "//internal/database",
         "//internal/endpoint",
         "//internal/errcode",
         "//internal/gitserver/gitdomain",
