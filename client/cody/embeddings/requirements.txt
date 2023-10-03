@@ -36,7 +36,7 @@ tenacity==8.2.1
 tqdm==4.64.1
 typing_extensions==4.5.0
 ujson==5.7.0
-urllib3==1.26.14
+urllib3==1.26.17
 uvicorn==0.20.0
 uvloop==0.17.0
 watchfiles==0.18.1
