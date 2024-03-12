@@ -82,8 +82,8 @@ require (
 	github.com/hexops/valast v1.4.3
 	github.com/honeycombio/libhoney-go v1.15.8
 	github.com/inconshreveable/log15 v0.0.0-20201112154412-8562bdadbbac
-	github.com/jackc/pgconn v1.10.1
-	github.com/jackc/pgx/v4 v4.14.1
+	github.com/jackc/pgconn v1.14.3
+	github.com/jackc/pgx/v4 v4.18.2
 	github.com/joho/godotenv v1.4.0
 	github.com/jordan-wright/email v4.0.1-0.20210109023952-943e75fe5223+incompatible
 	github.com/json-iterator/go v1.1.12
@@ -174,11 +174,11 @@ require (
 	go.uber.org/automaxprocs v1.5.1
 	go.uber.org/ratelimit v0.2.0
 	go.uber.org/zap v1.24.0
-	golang.org/x/crypto v0.14.0
-	golang.org/x/net v0.17.0
+	golang.org/x/crypto v0.20.0
+	golang.org/x/net v0.21.0
 	golang.org/x/oauth2 v0.5.0
 	golang.org/x/sync v0.1.0
-	golang.org/x/sys v0.13.0
+	golang.org/x/sys v0.17.0
 	golang.org/x/time v0.3.0
 	golang.org/x/tools v0.6.0
 	gonum.org/v1/gonum v0.12.0
@@ -399,9 +399,9 @@ require (
 	github.com/jackc/chunkreader/v2 v2.0.1 // indirect
 	github.com/jackc/pgio v1.0.0 // indirect
 	github.com/jackc/pgpassfile v1.0.0 // indirect
-	github.com/jackc/pgproto3/v2 v2.2.0 // indirect
-	github.com/jackc/pgservicefile v0.0.0-20200714003250-2b9c44734f2b // indirect
-	github.com/jackc/pgtype v1.11.1-0.20220425133820-53266f029fbb
+	github.com/jackc/pgproto3/v2 v2.3.3 // indirect
+	github.com/jackc/pgservicefile v0.0.0-20221227161230-091c0ba34f0a // indirect
+	github.com/jackc/pgtype v1.14.0
 	github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99 // indirect
 	github.com/jdxcode/netrc v0.0.0-20210204082910-926c7f70242a // indirect
 	github.com/jhump/protocompile v0.0.0-20220216033700-d705409f108f // indirect
@@ -477,8 +477,8 @@ require (
 	go.opentelemetry.io/otel/exporters/otlp/internal/retry v1.13.0 // indirect
 	go.uber.org/multierr v1.9.0 // indirect
 	golang.org/x/mod v0.8.0
-	golang.org/x/term v0.13.0 // indirect
-	golang.org/x/text v0.13.0
+	golang.org/x/term v0.17.0 // indirect
+	golang.org/x/text v0.14.0
 	golang.org/x/xerrors v0.0.0-20220907171357-04be3eba64a2 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/grpc v1.53.0
