@@ -12,7 +12,7 @@ require (
 	github.com/sourcegraph/sourcegraph/lib v0.0.0-20221216195033-42d26a0a2063
 	github.com/stretchr/testify v1.8.1
 	github.com/urfave/cli/v2 v2.23.7
-	golang.org/x/text v0.5.0
+	golang.org/x/text v0.13.0
 	gopkg.in/yaml.v2 v2.4.0
 )
 
@@ -63,7 +63,7 @@ require (
 	go.uber.org/zap v1.24.0 // indirect
 	golang.org/x/exp v0.0.0-20221208152030-732eee02a75a // indirect
 	golang.org/x/oauth2 v0.2.0 // indirect
-	golang.org/x/sys v0.3.0 // indirect
-	google.golang.org/protobuf v1.28.1 // indirect
+	golang.org/x/sys v0.13.0 // indirect
+	google.golang.org/protobuf v1.33.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
