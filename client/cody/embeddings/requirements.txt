@@ -17,7 +17,7 @@ httptools==0.5.0
 httpx==0.23.3
 idna==3.4
 itsdangerous==2.1.2
-Jinja2==3.1.2
+Jinja2==3.1.4
 MarkupSafe==2.1.2
 multidict==6.0.4
 numpy==1.24.2
